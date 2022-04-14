@@ -4,15 +4,15 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "mydev-tf-state-bucket001"
+    bucket = "s3bhargav"
     key    = "terraform.tfstate"
-    region = "ap-south-1"
-    dynamodb_table = "Bhargavrbs"
+    region = "us-east-1"
+    dynamodb_table = "dynamodb"
   }
 }
 
 resource "aws_instance" "web" {
-  ami   = "ami-03ededff12e34e59e"
+  ami   = "ami-0e472ba40eb589f49"
   instance_type = "t2.micro"
 
   tags = {
